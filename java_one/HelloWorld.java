@@ -1,6 +1,6 @@
-public class Welcome{
+public class HelloWorld{
 	public static void main(String[] args){
-		System.out.println("hello world!");
+		System.out.println("hello \n world!");
 	}
 }
 
@@ -28,4 +28,5 @@ public class void main(String[] args){......}
 
 5、每个语句以分号结束，所以一个语句可以跨多行，看到分号才结束
 
+6、\n 是换行的意思
 */
