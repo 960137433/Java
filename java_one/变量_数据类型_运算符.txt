@@ -15,7 +15,7 @@
 变量，本质是代表可操作的存储空间，位置确定，值可变。可以通过变量名访问、操作这个存的值。
 空间有大有小，所以会通过数据类型来区分大小，不同类型大小不一样。
 
-变量的声明：
+1、变量的声明：
 ```
 数据类型 变量名【=初始值】【，变量名【=初始值】...】     // 这里【=初始值】，方括号，表示可选项
 ```
@@ -30,9 +30,73 @@
 1、int age=1;
 2、int age;
    age=1;
-====5已学完
+
+2、变量的分类和作用域
+变量分类：局部变量、成员变量（实例变量）、静态变量（类变量）
+
+局部变量：local variable，在方法或语句块内部，在哪里定义就属于哪个方法或语句块，到语句块执行完毕，局部变量消失
+成员变量：类的内部，方法的外部，属于对象，对象有就在，没有就消失
+静态变量：类的内部，static修饰，属于类，类被加载就有效，类被卸载就消失
+
+```
+public class Welcome{
+	int studentNum=2;   //类里面的变量，成员变量（实例变量）
+	static int numr=3;  //静态变量（类变量）
+	public static void main(String[] args){
+		System.out.println("hello\n world!");
+		int age=1; //main方法里面的变量，局部变量
+		System.out.println(age);
+		
+	}
+	System.out.println(studentNum); // 报错
+	System.out.println(numr);  //报错
+}
+```
+
+```
+public void test(){
+   int i=10;
+   int j=i+1;
+   }  //编译不通过
+```
+
+对象的时候，会涉及成员变量、静态变量，目前暂时不深入
+
+3、常量和final，constant
+常量，用final修饰，指一个固定值，如1，hello
+
+```
+public class testConstant{
+	public static void main(String[] args){
+		final double PI=3.14;  //常量只能赋值一次
+		// PI=3;   //这里再赋值，会报错
+		System.out.println(PI);
+		int r=3;
+		double area=PI*r*r;	
+		System.out.println(PI);	
+		System.out.println("面积是："+area);	      
+	}
+
+}
+```
+为了更好的区分和表述，一般将 1、2、3、’a’、’b’、true、false、”helloWorld”等称为字符常量
+使用 final 修饰的 PI 等称为符号常量，一般而言的常量，指final修饰的符号常量
+所以上述，PI和3.14都是常量
 
 
-三、数据类型
+三、基本数据类型
+Java是一个强数据类型的语言，每个变量都必须声明其数据类型
+Java的数据类型分类：基本数据类型（primitive data type）、引用数据类型（reference data type）
+
+Java中定义了3类8种基本数据类型：
+1、数值型：byte、short、int、long、float、double，其中float、double是浮点型，其余是整数类型
+byte-1、short-2、int-4、long-8、float-4、double-8 个byte*8bit，可以表示2^bit位信息
+2、字符型：char
+3、布尔型：boolean
+
+引用数据类型：类class、接口interface、数组
+引用数据类型，大小统一为4个字节，记录引用对象的地址
+==学完8==
+
 
 四、运算符
