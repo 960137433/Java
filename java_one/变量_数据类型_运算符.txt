@@ -157,10 +157,11 @@ char a='s2';  //报错，因为char只能表示一个字符
 占用1/4个字节，一般是4个字节，在数组中用的时候，是1个字节
 Java不能使用0或非0代替true和false
 ```
-boolean b1=true;
+boolean b1=false;
 boolean b1=True; //编译失败
 
-boolean b1=true;
+boolean b1=true; //编译失败
+b1=true; //编译成功
 if(b1){   //类似于b1==true
 System.out.println("b1是true");
 }else{
@@ -170,6 +171,28 @@ System.out.println("b1是true");
 
 四、运算符operator
 1、算数运算符
-运算规则：
+整数运算：
+1.如果2个操作数有一个为long，则结果也要定义为long
+2.没有long时，结果为int。即使操作数全为short、byte，结果也是int
+
+浮点运算：
+1、操作数有一个为double，结果就为double
+2、2个操作数都是float，结果才是float
+
+取模运算：
+和左边的符号一致，一般使用整数，也可以是浮点数
+7%3=1 		-7%3=-1 	7%-3=1
+
+自增运算：
+```
+int a=3; 
+int b=++a;  //a 先自增，再给b赋值，a=4,b=4
+System.out.println("a="+a+"\t b="+b);
+int c=3;
+int d=c++;  // c先赋值给d，再自增, c=4,d=3
+System.out.println("\nc="+c+"\td="+d);
+```
+
+2、赋值及其扩展赋值运算符
 
 
