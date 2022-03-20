@@ -96,7 +96,80 @@ byte-1、short-2、int-4、long-8、float-4、double-8 个byte*8bit，可以表�
 
 引用数据类型：类class、接口interface、数组
 引用数据类型，大小统一为4个字节，记录引用对象的地址
-==学完8==
+
+1、整型
+整型：byte、short、int、long
+byte表示的数值范围：-2^7~2^7-1（-128~127）
+int表示的数值范围：-2^31~2^31-1（±21亿）
+进制：
+1、八进制：0开头
+2、十六进制：0x或0X开头
+3、二进制：ob或OB开头
+
+java的整型常熟默认为int类型，声明long常量需要在后面加L或l
+```
+long a1=55555; //在int的范围内，编译成功
+long b1=21000000001; //Main.java:10: error: integer number too large
+long b1=21000000001L;
+System.out.println("a1="+a1+"\nb1="+b1);
+```
+
+2、浮点型
+浮点型：float、double
+浮点数是不精确的，有误差的
+float：位数精确到7位有效数字，是double的1/2
+
+浮点型的2种表示形式：
+十进制形式， 3.14         314.0   0.314
+科学计数法形式，3.14e0    3.14E2  3.14e-1
+
+浮点型默认double类型，float类型需要后面加F或f
+```
+float a1=3.1;    //编译报错，因为默认是double，现在double转换成float，虚拟机没办法处理
+float a1=3.14F;  //编译成功
+double b1=3.14;  //编译成功
+double b2=3.14D; //编译成功
+double b3=3.14e2;  //314.0
+double b4=1.0/10;  //
+float a2=3222222222222L; //科学计数法
+```
+
+float、double的数据，不适合在对误差敏感的领域计算，如果需要精确，需要使用BigDecimal类
+
+3、字符型char
+Java使用的Unicode，在内存中占2个字节,2个字节表示一个字符
+Unicode可以表示65536个字符
+Unicode编码：\u开始，\u0000~\uFFFF之间，FF是十六进制，255
+```
+char a='s';
+char c='\u0061';  //a
+char a='s2';  //报错，因为char只能表示一个字符
+ String a='saa'; //报错
+```
+
+转义符：
+1、换行：/n
+2、\"
+3、\\
 
 
-四、运算符
+4、布尔型Boolean
+占用1/4个字节，一般是4个字节，在数组中用的时候，是1个字节
+Java不能使用0或非0代替true和false
+```
+boolean b1=true;
+boolean b1=True; //编译失败
+
+boolean b1=true;
+if(b1){   //类似于b1==true
+System.out.println("b1是true");
+}else{
+ System.out.println("b1是false");
+}   //输出：b1是true
+```
+
+四、运算符operator
+1、算数运算符
+运算规则：
+
+
