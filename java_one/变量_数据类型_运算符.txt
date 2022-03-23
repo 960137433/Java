@@ -286,6 +286,7 @@ System.out.println("flag="+c); //true
 
 1、自动转化
 容量小的，可以自动转换为容量大的。容量，指表数范围，不是指字节数
+
 ![image](https://github.com/960137433/Java/blob/main/images/20220323221708.png)
 
 2、强制转化
