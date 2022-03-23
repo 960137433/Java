@@ -289,6 +289,24 @@ System.out.println("flag="+c); //true
 
 ![image](https://github.com/960137433/Java/blob/main/images/20220323221708.png)
 
+```
+int a=1234;
+long b=a;
+double c=b;
+float e=b;
+System.out.println("flag="+c);
+```
+
+可以将常量直接赋值给byte、short、char，而不需要进行强制类型转换，只要不超出表数范围就可以
+```
+short b=1234;
+short b=1234000; //超出范围，所以报错
+char h3=97; //a
+char h3=97+25; //z
+System.out.println("flag="+b);
+```
+
+== 22已学完
 2、强制转化
 
 
