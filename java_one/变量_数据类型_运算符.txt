@@ -269,10 +269,29 @@ System.out.println("type="+type); //合格
 System.out.println("flag="+flag); //-1
 ```
 
-===20已学完
+
 7、运算符优先问题
+优先级：()、关系运算、位运算、逻辑运算、赋值最低
+优先级：逻辑非、逻辑与、逻辑或
+```
+boolean a1=true;
+boolean a2=true;
+boolean a3=false;
+boolean c=a1||a2&&a3;
+System.out.println("flag="+c); //true
+```
 
 8、自动类型转换详解
+除了Boolean类型外的7中类型，可以自动转化、强制转化
+
+1、自动转化
+容量小的，可以自动转换为容量大的。容量，指表数范围，不是指字节数
+![image](https://github.com/960137433/Java/blob/main/images/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220323221708.png)
+
+2、强制转化
+
+
+
 
 9、强制类型转换
 
