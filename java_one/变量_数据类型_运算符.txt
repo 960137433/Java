@@ -306,16 +306,37 @@ char h3=97+25; //z
 System.out.println("flag="+b);
 ```
 
-== 22已学完
-2、强制转化
-
-
-
 
 9、强制类型转换
+强制类型转换cast，用于强制的转换一个数值的类型
+
+强制转换的影响：
+1.可能会造成精度降低或溢出
+2.超出目标类型的表数范围时，就会截断成一个完全不同的值
+3.Boolean型和其他类型间，不能进行强制转换
+```
+double b=3.14;
+int a=(int)b;
+System.out.println("flag="+a); //a=3，损失精度，直接截取
+
+int b=300;
+byte a=(byte)b;
+System.out.println("flag="+a); // a=44，截断
+```
 
 10、基本类型转换-常见错误-溢出-L问题
+操作比较大的数的时候，要留意是否溢出，尤其整数操作
+```
+int b=1000000000; //10亿
+int a=20;
+int total=a*b;
+System.out.println("flag="+total);  //flag=-1474836480，溢出了
+long total2=a*b;   //会报错，因为a*b的结果是溢出的负数，且要运算结果为long，需要有一个因子为long
+System.out.println(b*(long)a); //20亿
+System.out.println(1L*b*a); //20亿
+```
 
+== 24已学完
 11、使用scanner获取键盘的输入
 
 
